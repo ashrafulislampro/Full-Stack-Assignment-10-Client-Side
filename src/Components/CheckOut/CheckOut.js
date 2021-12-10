@@ -16,7 +16,7 @@ const CheckOut = () => {
   const [items, setItems] = useState({});
   
   useEffect(() => {
-    fetch("https://ancient-everglades-08799.herokuapp.com/product/" + id)
+    fetch(" https://arcane-dusk-28190.herokuapp.com/product/" + id)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [id]);
