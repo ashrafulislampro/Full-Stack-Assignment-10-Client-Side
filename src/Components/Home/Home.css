@@ -1,0 +1,24 @@
+.home_content{
+          max-width: 1100px;
+          width: 100%;
+          justify-content: center ;
+          margin: 15px auto;
+}
+.form_field{
+          text-align: center;
+          margin: 50px;
+}
+.buttons{
+          background: #71BA58 !important; 
+          border-style: none !important;
+          font-weight: 600 !important;
+          width: 100px;
+          height: 45px;
+          margin-top: -5px;
+}
+.form_field input{
+          width: 350px;
+          height: 45px;
+          border-style: none;
+          background-color: lightgray;
+}

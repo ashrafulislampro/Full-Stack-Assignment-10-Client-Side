@@ -1,0 +1,21 @@
+.img{
+          width: 250px;
+          height: 260px;
+          margin: auto;
+}
+.card_container{
+          width: 18rem;
+          height: 24rem;
+          margin-top: 10px;
+          background: gray;
+          box-shadow: 3px 3px 10px gray, -3px -3px 10px gray;
+}
+.text_content{
+          display: flex;
+          justify-content: space-between;
+}
+.text_price{
+          color: #71BA58;
+}
+
+

@@ -1,0 +1,13 @@
+.button{
+          background: #71BA58!important;
+          color: white !important;
+          width: 100px;
+          height: 45px;
+          font-weight: bold !important;
+          margin-right: 20px !important;
+}
+.nav_link{
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: 600;
+}

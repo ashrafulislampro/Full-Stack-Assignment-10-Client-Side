@@ -1,0 +1,9 @@
+.order{
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+}
+#name_content{
+          color: rgb(104, 173, 0);
+         
+}
