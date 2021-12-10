@@ -11,7 +11,7 @@ const Products = (props) => {
   
   const handleButton = product => {
     const newUserInfo = {...loggedInUser, product};
-    fetch('http://localhost:5000/addBuy',{
+    fetch('https://ancient-everglades-08799.herokuapp.com/addBuy',{
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify(newUserInfo)

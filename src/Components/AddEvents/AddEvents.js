@@ -32,7 +32,7 @@ const AddEvents = (props) => {
       wight: data.wight,
       imageURL: imageURL,
     };
-    fetch('http://localhost:5000/addProducts',{
+    fetch('https://ancient-everglades-08799.herokuapp.comaddProducts',{
       method: 'POST',
       headers : { 'Content-Type': 'application/json' },
       body : JSON.stringify(productData)
