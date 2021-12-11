@@ -32,7 +32,7 @@ const AddEvents = (props) => {
       wight: data.wight,
       imageURL: imageURL,
     };
-    fetch('https://ancient-everglades-08799.herokuapp.comaddProducts',{
+    fetch('https://gentle-bayou-67475.herokuapp.com/addProducts',{
       method: 'POST',
       headers : { 'Content-Type': 'application/json' },
       body : JSON.stringify(productData)
@@ -236,7 +236,7 @@ const AddEvents = (props) => {
                     </Col>
                   </Row>
                 </div>
-                <input className="form_submit" type="submit" value="Save" />
+                <input onClick={() => alert("Event Save Successfully")} className="form_submit" type="submit" value="Save" />
               </form>
             </Container>
           </Box>
