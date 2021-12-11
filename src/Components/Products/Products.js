@@ -10,6 +10,7 @@ const Products = (props) => {
   const history = useHistory();
   
   const handleButton = product => {
+    
     const newUserInfo = {...loggedInUser, product};
     fetch('https://gentle-bayou-67475.herokuapp.com/addBuy',{
       method: 'POST',
@@ -20,8 +21,9 @@ const Products = (props) => {
     .then(data => console.log(data))
     history.push(`/checkOut/${product._id}`);
   }
+ 
   return (
-    <div className="col-md-4">
+    <div className="col-sm-12 col-md-6 col-lg-4 ml=2">
       <div>
         <Card className="card_container">
           <Card.Img variant="top" className="img" src={imageURL} />

@@ -5,7 +5,7 @@ const OrdersDetails = (props) => {
   const items = props.item;
   const { product } = items;
   const { productName, price, imageURL, wight } = product;
-  console.log(product);
+
   return (
     <Container className="container">
       <Row className="ordersDetails_content mt-4">

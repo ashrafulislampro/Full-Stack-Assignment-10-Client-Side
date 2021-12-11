@@ -5,6 +5,7 @@ import './Orders.css';
 const Orders = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [orderInfo, setOrderInfo] = useState([]);
+
   useEffect(() => {
     fetch("https://gentle-bayou-67475.herokuapp.com/buyProducts?email=" + loggedInUser.email,{
       method: 'GET',
@@ -18,7 +19,7 @@ const Orders = () => {
       .then((res) => res.json())
       .then((data) => setOrderInfo(data));
   }, [loggedInUser.email]);
-  console.log(orderInfo);
+
   return (
     <div className="container">
       <div className="order">

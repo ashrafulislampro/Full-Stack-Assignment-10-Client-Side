@@ -11,8 +11,8 @@ const Home = () => {
   }, []);
   return (
     <div className="home_content">
-    <div>
-      <div className="form_field">
+    <div className="row">
+      <div className="form_field col-sm-12 col-md-12 col-lg-12">
         <input type="search" name="" id="" />
         <Button className="buttons" type="search">
           Search
