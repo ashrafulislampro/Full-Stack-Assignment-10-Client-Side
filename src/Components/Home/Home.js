@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 const Home = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(" https://arcane-dusk-28190.herokuapp.com/products")
+    fetch("https://gentle-bayou-67475.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

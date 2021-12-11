@@ -175,7 +175,7 @@ const AddEvents = (props) => {
               width: { sm: `calc(100% - ${drawerWidth}px)` },
             }}
           >
-            <Container className="form_container">
+            <Container className="form_content">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form_content">
                   <Row>

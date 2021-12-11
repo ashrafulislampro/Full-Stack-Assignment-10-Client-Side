@@ -6,7 +6,15 @@ const Orders = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [orderInfo, setOrderInfo] = useState([]);
   useEffect(() => {
-    fetch(" https://arcane-dusk-28190.herokuapp.com/buyProducts?email=" + loggedInUser.email)
+    fetch("https://gentle-bayou-67475.herokuapp.com/buyProducts?email=" + loggedInUser.email,{
+      method: 'GET',
+      headers: { 
+             'Content-Type': 'application/json',
+             Authorization : `Bearer ${sessionStorage.getItem("token")}`
+       }
+      }
+    
+    )
       .then((res) => res.json())
       .then((data) => setOrderInfo(data));
   }, [loggedInUser.email]);

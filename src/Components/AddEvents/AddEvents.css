@@ -15,7 +15,7 @@
 .menu_bar span{
           margin-left: 5px;
 }
-.form_container{
+.form_content{
           background-color: rgb(233, 233, 233);
           padding: 100px;
 }
@@ -44,6 +44,7 @@
           margin-top: 5px;
           background-color: #71BA58;
           margin-right: 200px;
+          margin-bottom: 10px;
           border-style: none;
           width: 100px;
           height : 37px;

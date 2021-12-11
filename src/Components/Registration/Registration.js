@@ -50,6 +50,7 @@ const Registration = () => {
                                                   setUserInfo(newUserInfo);
                                                   updateUserProfileName(userInfo.name);
                                                   setLoggedInUser(newUserInfo);
+                                                  storeAuthToken();
                                                   history.replace(from);
                                         })
                                         .catch((error) => {
@@ -82,6 +83,7 @@ const Registration = () => {
                                         const { displayName, email } = result.user;
                                         const newUserInfo = { name: displayName, email };
                                         setLoggedInUser(newUserInfo);
+                                        storeAuthToken();
                                         history.replace(from);
 
                               }).catch((error) => {
@@ -102,6 +104,7 @@ const Registration = () => {
                                         const { displayName, email } = result.user;
                                         const newUserInfo = { name: displayName, email };
                                         setLoggedInUser(newUserInfo);
+                                        storeAuthToken();
                                         history.replace(from);
                               })
                               .catch((error) => {
@@ -111,6 +114,21 @@ const Registration = () => {
                                         setUserInfo(newUserInfo);
                               });
           }
+
+          //   verify id token 
+  const storeAuthToken = () => {
+          const auth = getAuth(app);
+          auth.currentUser
+            .getIdToken(/* forceRefresh */ true)
+            .then(function (idToken) {
+              console.log(idToken);
+              sessionStorage.setItem("token", idToken);
+              history.replace(from);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        };
           return (
                     <div className="container">
                               <div className="form_container">

@@ -28,6 +28,7 @@
 .form_container{
           border-radius: 5px;
           width: 560px;
+          padding: 25px;
           height: 100%;
           text-align: center;
           margin: 30px auto;
