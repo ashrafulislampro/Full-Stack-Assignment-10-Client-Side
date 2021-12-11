@@ -44,6 +44,7 @@ const Login = () => {
         })
         .catch((error) => {
           const newUserInfo = { ...userLog };
+          newUserInfo.error = error.message;
           newUserInfo.success = false;
           setUserLog(newUserInfo);
         });
@@ -63,9 +64,10 @@ const Login = () => {
         history.replace(from);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        const newUserInfo = { ...userLog };
+        newUserInfo.error = error.message;
+        newUserInfo.success = false;
+        setUserLog(newUserInfo);
       });
   };
 
@@ -83,13 +85,14 @@ const Login = () => {
         history.replace(from);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        const newUserInfo = { ...userLog };
+        newUserInfo.error = error.message;
+        newUserInfo.success = false;
+        setUserLog(newUserInfo);
       });
   };
 
-//   verify id token 
+  //   verify id token
   const storeAuthToken = () => {
     const auth = getAuth(app);
     auth.currentUser
