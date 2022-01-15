@@ -179,7 +179,7 @@ const AddEvents = (props) => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form_content">
                   <Row>
-                    <Col xs={12} md={12} lg={6}>
+                    <Col xs={12} md={12} lg={6} >
                       <label htmlFor="event-name">
                         Product Name
                         <br />
@@ -192,7 +192,7 @@ const AddEvents = (props) => {
                         />
                       </label>
                     </Col>
-                    <Col xs={12} md={12} lg={6}>
+                    <Col xs={12} md={12} lg={5} style={{marginLeft: "10px"}}>
                       <label htmlFor="wight">
                         Wight
                         <br />
@@ -220,7 +220,7 @@ const AddEvents = (props) => {
                         />
                       </label>
                     </Col>
-                    <Col xs={12} md={12} lg={6}>
+                    <Col xs={12} md={12} lg={5} style={{marginLeft: "10px"}}>
                       <label htmlFor="photo">
                         Add Photo
                         <br />

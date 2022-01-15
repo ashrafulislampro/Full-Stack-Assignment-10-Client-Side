@@ -13,7 +13,7 @@ const Header = () => {
   }
   return (
     <Navbar bg="light" expand="lg">
-      <Container fluid>
+      <Container>
         <Navbar.Brand href="#">
           <img style={{ width: "300px" }} src={logo} alt="" />
         </Navbar.Brand>
