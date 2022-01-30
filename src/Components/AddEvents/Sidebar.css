@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Charm:wght@700&family=Lobster&family=Quintessential&display=swap");
+
+.sidebar_section {
+  height: 90vh;
+  width: 100%;
+  background-image: linear-gradient(40deg, #00ffd5, #008388);
+}
+.sidebar_section ul li {
+  margin-left: 43px;
+  padding-top: 20px;
+}
+.sidebar_section ul li span {
+  display: inline-block;
+  color: #fff;
+}
+.sidebar_section li:hover {
+  color: #f70707;
+  filter: invert(86%) sepia(48%) saturate(1009%) hue-rotate(344deg)
+    brightness(100%) contrast(111%) !important;
+}
+.logo_text {
+  font-weight: bold;
+  font-family: "Anton", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Lobster", cursive;
+}

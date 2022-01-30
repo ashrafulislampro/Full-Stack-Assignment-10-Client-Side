@@ -1,13 +1,26 @@
-.button{
-          background: #71BA58!important;
-          color: white !important;
-          width: 100px;
-          height: 45px;
-          font-weight: bold !important;
-          margin-right: 20px !important;
+.button {
+  background: #71ba58 !important;
+  color: white !important;
+  width: 100px;
+  height: 45px;
+  font-weight: bold !important;
+  margin-right: 20px !important;
 }
-.nav_link{
-          text-decoration: none;
-          font-size: 20px;
-          font-weight: 600;
+#dropdown_menu {
+  color: #0b58ca;
+  font-weight: 600;
+  font-size : 20px !important;
+}
+.nav_link {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+.navbar_img {
+  width: 300px;
+}
+@media screen and (max-width: 375px) {
+  .navbar_img {
+    width: 230px;
+  }
 }

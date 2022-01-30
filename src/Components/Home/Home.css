@@ -1,12 +1,19 @@
-.home_content{
-          max-width: 1100px;
-          width: 100%;
-          justify-content: center ;
-          margin: 15px auto;
+.form_container_role{
+          display: flex;
+          padding: 40px 210px !important;  
 }
 .form_field{
+          display: flex;
+          margin: 80px auto;
           text-align: center;
-          margin: 50px;
+
+}
+.search-buttons{
+          background: #71BA58 !important; 
+          border-style: none !important;
+          font-weight: 600 !important;
+          width: 100px;
+          height: 45px;      
 }
 .buttons{
           background: #71BA58 !important; 
@@ -14,11 +21,33 @@
           font-weight: 600 !important;
           width: 100px;
           height: 45px;
-          margin-top: -5px;
 }
 .form_field input{
           width: 350px;
           height: 45px;
-          border-style: none;
-          background-color: lightgray;
+
+}
+@media screen and (max-width: 780px) {
+          .form_container_role{
+                    display: flex;
+                    padding: 40px 30px !important;     
+          }
+}
+@media screen and (max-width: 600px) {
+          .form_container_role{
+                    display: flex;
+                    padding: 40px 5px !important;     
+          }
+}
+@media screen and (max-width: 375px) {
+          .form_container_role{
+                    display: flex;
+                    padding: 40px 5px !important;     
+          }
+}
+@media screen and (max-width: 360px) {
+          .form_container_role{
+                    display: flex;
+                    padding: 40px 5px !important;     
+          }
 }

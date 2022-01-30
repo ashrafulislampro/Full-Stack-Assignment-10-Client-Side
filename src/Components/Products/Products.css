@@ -6,8 +6,8 @@
 .card_container{
           width: 18rem;
           height: 24rem;
-          margin-top: 10px;
-          margin-left: 10px;
+          justify-content: center;
+          margin: 10px auto;
           box-shadow: 3px 3px 10px gray, -3px -3px 10px gray;
 }
 .text_content{

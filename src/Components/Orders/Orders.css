@@ -7,3 +7,8 @@
           color: rgb(104, 173, 0);
          
 }
+.order_content_box{
+          display: flex;
+          text-align: center;
+          margin: auto;
+}

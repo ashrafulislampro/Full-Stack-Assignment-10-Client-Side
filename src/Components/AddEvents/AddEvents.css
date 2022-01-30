@@ -1,55 +1,68 @@
-.menu_bar{
-          background-color: rgb(27, 100, 27);
-          height : 100%;
+.upload_img{
+          position: relative;
+          display: inline-block;
 }
-.menu_bar h4{
-          color: white;
+.header_text{
+          font-size: 25px;
           font-weight: bold;
 }
-.menu_bar p{
-          color: white;
+.upload_img input{
+          position: absolute;
+          width: 150px;
+          opacity: 0;
 }
-.menu_bar p img{
-          width: 30px;
+.upload_btn{
+          width: 150px;
+          background-color: #71BA58 !important;
+          color: #fff !important;
+          font-weight: bold !important;
 }
-.menu_bar span{
-          margin-left: 5px;
-}
-.form_content{
-          background-color: rgb(233, 233, 233);
-          padding: 100px;
-}
-
 .form_input{
-          width : 390px;
-          height: 37px;
-          border-style: none;
-          padding: 5px;
-          border-radius: 5px;
+          height: 45px;
+          width: 44vw !important;
 }
 .form_content{
-          margin: auto;
           justify-content: center;
-          max-width: 900px;
           width: 100%;
           padding: 30px;
-          height : 100%;
           border-radius: 5px;
-          background-color: rgb(167, 166, 166);
+          background-color: rgb(233, 233, 233);
 }
 .form_content label{
-          margin:  5px;
+          margin:  10px;
 }
 .form_submit{
           float: right;
-          margin-top: 5px;
           background-color: #71BA58;
-          margin-right: 200px;
-          margin-bottom: 10px;
+          margin-top: 30px;
           border-style: none;
-          width: 100px;
+          width: 150px;
           height : 37px;
           border-radius: 5px;
           color: white;
           font-weight: 600;
+}
+@media screen and (max-width: 600px) {
+          .form_input{
+                    width: 380px !important;
+          } 
+          .form_content{
+                    padding: 0px;
+                   
+          }
+          .header_text{
+                    margin: 15px 0;
+          }
+}
+@media screen and (max-width: 375px) {
+          .form_input{
+                    width: 330px !important;
+          } 
+          .form_content{
+                    padding: 0px;
+                   
+          }
+          .header_text{
+                    margin: 10px 0;
+          }
 }

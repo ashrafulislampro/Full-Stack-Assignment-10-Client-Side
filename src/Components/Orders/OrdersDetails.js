@@ -1,24 +1,24 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import "./OrdersDetails.css";
 const OrdersDetails = (props) => {
   const items = props.item;
-  const { product } = items;
-  const { productName, price, imageURL, wight } = product;
-
+  const { newProduct } = items;
+  const { productName, imageURL, status } = newProduct;
   return (
-    <Container className="container">
-      <Row className="ordersDetails_content mt-4">
-        <Col xs={12} md={9} lg={9}>
-          <img style={{ width: "110px", marginLeft: "5px"}} src={imageURL} alt="" />
-          </Col>
-        <Col xs={12} md={3} lg={3}>
-          <h3>{productName}</h3>
-          <p>Wight : {wight}</p>
-          <p>Price : $ {price}</p>
-        </Col>
-      </Row>
-    </Container>
+    <div className="col-sm-12 col-md-6 col-lg-4">
+        <div class="card shadow my-2" style={{ width: "16rem", margin: "auto" }}>
+          <img
+            style={{ height: "50%", width: "50%", margin: "auto" }}
+            src={imageURL}
+            className="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 className="card-title text-center">{productName}</h5>
+            <button className="btn btn-primary">{status}</button>
+          </div>
+        </div>
+    </div>
   );
 };
 

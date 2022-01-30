@@ -1,30 +1,42 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../App";
 import OrdersDetails from "./OrdersDetails";
-import './Orders.css';
+import "./Orders.css";
 const Orders = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [orderInfo, setOrderInfo] = useState([]);
 
   useEffect(() => {
-    fetch("https://gentle-bayou-67475.herokuapp.com/buyProducts?email=" + loggedInUser.email,{
-      method: 'GET',
-      headers: { 
-             'Content-Type': 'application/json',
-             Authorization : `Bearer ${sessionStorage.getItem("token")}`
-       }
+    fetch(
+      "https://gentle-bayou-67475.herokuapp.com/buyProducts?email=" +
+        loggedInUser.email,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
       }
-    
     )
       .then((res) => res.json())
-      .then((data) => setOrderInfo(data));
+      .then((data) => {
+        if (data) {
+          toggleSpinner();
+          setOrderInfo(data);
+        }
+      });
   }, [loggedInUser.email]);
+
+  const toggleSpinner = () => {
+    const spinner = document.getElementById('spinner_buffer')
+    spinner.classList.toggle('d-none');
+  };
 
   return (
     <div className="container">
       <div className="order">
         <div>
-        <h2>Order Summary</h2>
+          <h2>Order Summary</h2>
         </div>
         <div id="name_content">
           <h2>{loggedInUser.name}</h2>
@@ -32,9 +44,21 @@ const Orders = () => {
         </div>
       </div>
 
-      {orderInfo.map((item) => (
-        <OrdersDetails item={item} key={item._id}></OrdersDetails>
-      ))}
+      <div className="container d-flex justify-content-center">
+        <div
+          id="spinner_buffer"
+          className="d-flex justify-content-center d-done"
+        >
+          <div className="spinner-border text-warning" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <div className="row text-center">
+          {orderInfo.map((item) => (
+            <OrdersDetails item={item} key={item._id}></OrdersDetails>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

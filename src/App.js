@@ -15,6 +15,8 @@ import Registration from "./Components/Registration/Registration";
 import Orders from "./Components/Orders/Orders";
 import NotFound from "./Components/NotFound/NotFound";
 import Content from "./Components/NotFound/Content";
+import ManageProduct from './Components/ManageProduct/ManageProduct';
+import MakeAdmin from './Components/MakeAdmin/MakeAdmin';
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -29,22 +31,25 @@ function App() {
           <PrivateRoute path="/orders">
             <Orders/>
           </PrivateRoute>
+          <PrivateRoute path="/manageProduct">
+            <ManageProduct/>
+          </PrivateRoute>
           <Route path="/registration">
           <Registration />
           </Route>
           <PrivateRoute path="/checkOut/:id">
-          <CheckOut />
+            <CheckOut />
           </PrivateRoute>
           <Route path="/login">
             <Login/>
           </Route>
-          <Route path="/addEvents">
+          <PrivateRoute path="/makeAdmin">
+            <MakeAdmin />
+          </PrivateRoute>
+          <PrivateRoute path="/addEvents">
             <AddEvents />
-          </Route>
+          </PrivateRoute>
           <Route path="/deals">
-            <Content />
-          </Route>
-          <Route path="/admin">
             <Content />
           </Route>
           <Route exact path="/">

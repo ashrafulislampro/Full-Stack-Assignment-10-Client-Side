@@ -1,0 +1,28 @@
+.table_data{
+          width: 340px;
+}
+.data{
+          width: 230px;
+}
+@media screen and (max-width:1300px){
+          .data{
+                    width: 170px;
+          }
+}
+@media screen and (max-width:1110px){
+          .data{
+                    width: 150px;
+          }
+          .table_data{
+                    width: 250px;
+          }
+}
+@media screen and (max-width:375px){
+          .data{
+                    width: 30px;
+          }
+          .header_text{
+                    margin-top: 15px;
+          }
+          
+}

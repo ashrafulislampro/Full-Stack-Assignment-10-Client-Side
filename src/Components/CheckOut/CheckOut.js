@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -9,24 +9,41 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "./../../App";
 
 const CheckOut = () => {
-
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const { id } = useParams();
   const [items, setItems] = useState({});
-  
+
   useEffect(() => {
     fetch("https://gentle-bayou-67475.herokuapp.com/product/" + id)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [id]);
-  
-  
-const {productName, price, wight} = items;
-const history = useHistory();
-const handleCheckOut = () => {
-  history.push('/orders');
-}
+
+  console.log(items);
+  const { productName, price, wight } = items;
+  const history = useHistory();
+  const handleCheckOut = (items) => {
+    const newProduct = {
+      productName: items.productName,
+      weight: items.wight,
+      price: items.price,
+      status: 'Pending',
+      imageURL: items.imageURL,
+    };
+    const newUserInfo = { ...loggedInUser, newProduct };
+    fetch("https://gentle-bayou-67475.herokuapp.com/addBuy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newUserInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+    history.push("/orders");
+  };
+
   return (
     <div className="container">
       <h2 style={{ fontWeight: "700", marginTop: "10px" }}>CheckOut</h2>
@@ -47,25 +64,27 @@ const handleCheckOut = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-           
-              <TableRow>
-                <TableCell>{productName}</TableCell>
-                <TableCell align="right">{1}</TableCell>
-                <TableCell align="right">{wight}</TableCell>
-                <TableCell align="right">{price}</TableCell>
-              </TableRow>
             <TableRow>
-              <TableCell rowSpan={3}/>
+              <TableCell>{productName}</TableCell>
+              <TableCell align="right">{1}</TableCell>
+              <TableCell align="right">{wight}</TableCell>
+              <TableCell align="right">{price}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell rowSpan={3} />
               <TableCell colSpan={2}>Total</TableCell>
               <TableCell align="right">{price}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
       </TableContainer>
-      <Button onClick={handleCheckOut} style={{ float: "right", marginTop: "10px" }} className="buttons">
+      <Button
+        onClick={() => handleCheckOut(items)}
+        style={{ float: "right", marginTop: "10px" }}
+        className="buttons"
+      >
         CheckOut
       </Button>
-      
     </div>
   );
 };
