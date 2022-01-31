@@ -55,7 +55,7 @@ const Orders = () => {
           </div>
         </div>
         <Zoom>
-        <div className="row text-center">
+        <div className="row justify-content-between">
           {orderInfo.map((item) => (
             <OrdersDetails item={item} key={item._id}></OrdersDetails>
           ))}

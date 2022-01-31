@@ -8,7 +8,7 @@ const OrdersDetails = (props) => {
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
       
-        <div class="card shadow my-2" style={{ width: "16rem", margin: "auto" }}>
+        <div class="card shadow my-2 text-center" style={{ width: "18rem", height: "16rem", margin: "auto" }}>
           <img
             style={{ height: "50%", width: "50%", margin: "auto" }}
             src={imageURL}
