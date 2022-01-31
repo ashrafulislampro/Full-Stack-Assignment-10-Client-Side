@@ -1,3 +1,5 @@
+#Usable Technologies
+
 Bootstrap
 
 React
@@ -16,6 +18,12 @@ Express.js
 
 MongoDB
 
-Live link : https://full-stack-fresh-valley.netlify.app/
+axios
 
-kaj nah korle reload diben. 
+react-reveal
+
+react-toastify
+
+Live link : https://full-stack-assignment-10.web.app/
+
+
