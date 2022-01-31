@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../App";
 import OrdersDetails from "./OrdersDetails";
 import "./Orders.css";
+import {Zoom} from 'react-reveal';
 const Orders = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [orderInfo, setOrderInfo] = useState([]);
@@ -53,11 +54,13 @@ const Orders = () => {
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
+        <Zoom>
         <div className="row text-center">
           {orderInfo.map((item) => (
             <OrdersDetails item={item} key={item._id}></OrdersDetails>
           ))}
         </div>
+        </Zoom>
       </div>
     </div>
   );

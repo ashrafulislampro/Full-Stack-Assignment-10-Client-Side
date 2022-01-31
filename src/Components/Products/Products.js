@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "./Products.css";
+import {Bounce} from 'react-reveal';
 const Products = (props) => {
   const products = props.product;
   const { productName, price, wight, imageURL, _id } = products;
@@ -13,7 +14,7 @@ const Products = (props) => {
  
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
-      <div>
+      <Bounce>
         <Card className="card_container">
           <Card.Img variant="top" className="img" src={imageURL} />
           <Card.Body>
@@ -28,7 +29,7 @@ const Products = (props) => {
             </Card.Text>
           </Card.Body>
         </Card>
-      </div>
+      </Bounce>
     </div>
   );
 };
