@@ -13,6 +13,7 @@ import {
 import fbLogo from "../../images/Group 2.png";
 import gLogo from "../../images/Group 573.png";
 import firebaseConfig from "./firebase-config";
+import { Zoom } from 'react-reveal';
 
 const Login = () => {
   const app = initializeApp(firebaseConfig);
@@ -108,6 +109,7 @@ const Login = () => {
   };
   return (
     <div className="container">
+      <Zoom>
       <div className="form_container">
         <form className="ship_form" onSubmit={handleFormSubmit}>
           <h3>Log in account</h3>
@@ -141,6 +143,7 @@ const Login = () => {
         <img className="icon" src={gLogo} alt="" />{" "}
         <span>continue with google</span>
       </button>
+      </Zoom>
     </div>
   );
 };

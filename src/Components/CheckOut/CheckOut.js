@@ -78,13 +78,13 @@ const CheckOut = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Button
+      {items.productName && <Button
         onClick={() => handleCheckOut(items)}
         style={{ float: "right", marginTop: "10px" }}
         className="buttons"
       >
         CheckOut
-      </Button>
+      </Button>}
     </div>
   );
 };

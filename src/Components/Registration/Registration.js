@@ -14,6 +14,7 @@ import { UserContext } from "../../App";
 import fbLogo from "../../images/Group 2.png";
 import gLogo from "../../images/Group 573.png";
 import "../Login/Login.css";
+import { Zoom } from 'react-reveal';
 const Registration = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const app = initializeApp(firebaseConfig);
@@ -142,6 +143,7 @@ const Registration = () => {
   };
   return (
     <div className="container">
+    <Zoom>
       <div className="form_container">
         <form className="ship_form" onSubmit={handleFormSubmit}>
           <h3>Create an account</h3>
@@ -194,6 +196,7 @@ const Registration = () => {
         <img className="icon" src={gLogo} alt="" />{" "}
         <span>continue with google</span>
       </button>
+      </Zoom>
     </div>
   );
 };
